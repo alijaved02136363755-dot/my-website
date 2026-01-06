@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Website</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <h2>MySite</h2>
+  <ul>
+    <li onclick="showPage('home')">Home</li>
+    <li onclick="showPage('about')">About</li>
+    <li onclick="showPage('contact')">Contact</li>
+  </ul>
+</nav>
+
+<!-- HOME -->
+<section id="home" class="page active">
+  <h1>Welcome to My Store</h1>
+  <p>This is Home Page</p>
+  <button onclick="homeAlert()">Click Me</button>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="page">
+  <h1>About Us</h1>
+  <p>We provide best online products like Daraz.</p>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="page">
+  <h1>Contact Us</h1>
+  <input type="text" id="name" placeholder="Your Name">
+  <input type="email" id="email" placeholder="Your Email">
+  <button onclick="sendMessage()">Send</button>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
