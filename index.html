@@ -1,41 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Cool Website</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Shop</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<nav>
-  <h2>My Cool Site</h2>
-  <ul>
-    <li id="nav-home" onclick="showPage('home')">Home</li>
-    <li id="nav-about" onclick="showPage('about')">About</li>
-    <li id="nav-contact" onclick="showPage('contact')">Contact</li>
-  </ul>
-</nav>
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="logo">SHOP.</div>
 
-<!-- HOME -->
-<section id="home" class="page active">
-  <h1>Welcome to Home</h1>
-  <p>Check out our cool website features!</p>
-  <button onclick="homeAlert()">Click Me</button>
-</section>
+  <input type="text" placeholder="Search products..." class="search">
 
-<!-- ABOUT -->
-<section id="about" class="page">
-  <h1>About Us</h1>
-  <p>We provide amazing online products and experiences.</p>
-</section>
+  <div class="nav-cart" onclick="toggleCart()">
+    Cart <span id="cartCount">0</span>
+  </div>
+</header>
 
-<!-- CONTACT -->
-<section id="contact" class="page">
-  <h1>Contact Us</h1>
-  <input type="text" id="name" placeholder="Your Name">
-  <input type="email" id="email" placeholder="Your Email">
-  <button onclick="sendMessage()">Send Message</button>
-</section>
+<!-- PRODUCTS -->
+<main class="products">
+
+  <div class="card">
+    <img src="photo-pair-stylish-wireless-headphones_1056572-20536.avif">
+    <h3>Wireless Headphones</h3>
+    <p>Rs 4500</p>
+    <button onclick="addToCart('Wireless Headphones',4500,this)">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="R.jpg">
+    <h3>Smart Watch</h3>
+    <p>Rs 6200</p>
+    <button onclick="addToCart('Smart Watch',6200,this)">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="R (1).jpg">
+    <h3>Gaming Mouse</h3>
+    <p>Rs 2600</p>
+    <button onclick="addToCart('Gaming Mouse',2600,this)">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="181128_1716824630.webp">
+    <h3>Bluetooth Speaker</h3>
+    <p>Rs 5400</p>
+    <button onclick="addToCart('Bluetooth Speaker',5400,this)">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="Sc37ed9794d954a888208bceca6e9889bT (1).webp">
+    <h3>Power Bank</h3>
+    <p>Rs 3800</p>
+    <button onclick="addToCart('Power Bank',3800,this)">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="black-polyester-laptop-bag-32l-product-images-rvj9e4augi-0-202209240030.jpg">
+    <h3>Laptop Bag</h3>
+    <p>Rs 3200</p>
+    <button onclick="addToCart('Laptop Bag',3200,this)">Add to Cart</button>
+  </div>
+
+</main>
+
+<!-- CART -->
+<aside class="cart" id="cart">
+  <h2>Cart</h2>
+  <div id="cartItems"></div>
+  <div class="total">Total: Rs <span id="total">0</span></div>
+ <button class="order-btn" id="orderBtn" onclick="goCheckout()">Checkout</button>
+
+</aside>
 
 <script src="script.js"></script>
 </body>
